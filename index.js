@@ -9,6 +9,7 @@ import Address from './src/components/Address'
 import { AlertContainer, Alert } from './src/components/Alert'
 import Badge from './src/components/Badge'
 import Bubble from './src/components/Bubble'
+import { ButtonGroup, Button } from './src/components/Button'
 
 // Named exports
 export {
@@ -21,5 +22,7 @@ export {
   AlertContainer,
   Alert,
   Badge,
-  Bubble
+  Bubble,
+  ButtonGroup,
+  Button
 }
