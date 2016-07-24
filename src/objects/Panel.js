@@ -47,4 +47,9 @@ Panel.propTypes = {
   bottomNav: PropTypes.bool
 }
 
+Panel.defaultProps = {
+  topNav: false,
+  bottomNav: false
+}
+
 export default Panel

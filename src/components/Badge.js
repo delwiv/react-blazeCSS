@@ -25,4 +25,8 @@ Badge.propTypes = {
   round: PropTypes.bool
 }
 
+Badge.defaultProps = {
+  round: false
+}
+
 export default Badge

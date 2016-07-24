@@ -53,6 +53,11 @@ Grid.propTypes = {
   noGutter: PropTypes.bool
 }
 
+Grid.defaultProps = {
+  wrap: false,
+  noGutter: false
+}
+
 const Cell = ({ width, align, offset, responsive, noGutter, fixed, hidden, visible, children, ...rest }) => {
   const className = classnames(
     s1['o-grid__cell'], {
@@ -81,8 +86,35 @@ Cell.propTypes = {
   responsive: PropTypes.oneOf(sizes),
   noGutter: PropTypes.bool,
   fixed: PropTypes.bool,
-  hidden: PropTypes.bool,
-  visible: PropTypes.bool
+  hidden: (props, propName, componentName) => {
+    if (props[propName] !== true && props[propName] !== false) {
+      return new Error(
+        'Invalid prop `' + propName + '` supplied to `' + componentName + '`. Validation failed.'
+      )
+    } else if (props.visible) {
+      return new Error(
+        'Invalid prop `' + propName + '` on `' + componentName + '`. `visible` is already defined. Validation failed.'
+      )
+    }
+  },
+  visible: (props, propName, componentName) => {
+    if (props[propName] !== true && props[propName] !== false) {
+      return new Error(
+        'Invalid prop `' + propName + '` supplied to `' + componentName + '`. Validation failed.'
+      )
+    } else if (props.hidden) {
+      return new Error(
+        'Invalid prop `' + propName + '` on `' + componentName + '`. `hidden` is already defined. Validation failed.'
+      )
+    }
+  }
+}
+
+Cell.defaultProps = {
+  noGutter: false,
+  fixed: false,
+  hidden: false,
+  visible: false
 }
 
 export {

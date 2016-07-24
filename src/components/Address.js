@@ -15,4 +15,8 @@ Address.propTypes = {
   heading: PropTypes.string
 }
 
+Address.defaultProps = {
+  heading: false
+}
+
 export default Address

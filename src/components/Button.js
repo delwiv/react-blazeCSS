@@ -5,10 +5,10 @@ import { states, extendedSizes } from '../constants'
 
 import s from 'blaze/scss/components.buttons.scss'
 
-const ButtonGroup = ({ rounded, children, ...rest }) => {
+const ButtonGroup = ({ round, children, ...rest }) => {
   const className = classnames(
     s['c-button-group'], {
-      [s['c-button-group--rounded']]: rounded
+      [s['c-button-group--rounded']]: round
     }
   )
 
@@ -20,10 +20,14 @@ const ButtonGroup = ({ rounded, children, ...rest }) => {
 }
 
 ButtonGroup.propTypes = {
-  rounded: PropTypes.bool
+  round: PropTypes.bool
 }
 
-const Button = ({ type, state, size, block, ghost, rounded, close, children, ...rest }) => {
+ButtonGroup.defaultProps = {
+  round: false
+}
+
+const Button = ({ type, state, size, block, ghost, round, close, children, ...rest }) => {
   const className = classnames(
     s['c-button'], {
       [s[`c-button--${state}`]]: state && !ghost,
@@ -31,7 +35,7 @@ const Button = ({ type, state, size, block, ghost, rounded, close, children, ...
       [s[`c-button--${size}`]]: size,
       [s['c-button--block']]: block,
       [s['c-button--ghost']]: ghost,
-      [s['c-button--rounded']]: rounded
+      [s['c-button--rounded']]: round
     }
   )
   
@@ -71,8 +75,16 @@ Button.propTypes = {
   size: PropTypes.oneOf(extendedSizes),
   block: PropTypes.bool,
   ghost: PropTypes.bool,
-  rounded: PropTypes.bool,
+  round: PropTypes.bool,
   close: PropTypes.bool
+}
+
+Button.defaultProps = {
+  type: 'button',
+  block: false,
+  ghost: false,
+  round: false,
+  close: false
 }
 
 export {

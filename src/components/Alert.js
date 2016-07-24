@@ -29,6 +29,10 @@ AlertContainer.propTypes = {
   trigger: PropTypes.bool
 }
 
+AlertContainer.defaultProps = {
+  trigger: false
+}
+
 const Alert = ({ state, animate, from, speed, trigger, closable, children, ...rest }) => {
   const className = classnames(
     s['c-alerts__alert'], {
@@ -58,6 +62,8 @@ Alert.propTypes = {
 }
 
 Alert.defaultProps = {
+  animate: false,
+  trigger: false,
   closable: true
 }
 

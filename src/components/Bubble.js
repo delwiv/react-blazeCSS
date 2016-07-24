@@ -30,4 +30,8 @@ Bubble.propTypes = {
   trigger: PropTypes.bool
 }
 
+Bubble.defaultProps = {
+  trigger: false
+}
+
 export default Bubble
