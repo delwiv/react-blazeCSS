@@ -11,6 +11,9 @@ import Badge from './src/components/Badge'
 import Bubble from './src/components/Bubble'
 import { ButtonGroup, Button } from './src/components/Button'
 
+// Utilities
+import Align from './src/utilities/Align'
+
 // Named exports
 export {
   Container,
@@ -24,5 +27,6 @@ export {
   Badge,
   Bubble,
   ButtonGroup,
-  Button
+  Button,
+  Align
 }
