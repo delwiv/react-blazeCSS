@@ -302,3 +302,30 @@ export default Example
 | block | `true`, `false` | `false` | Block Button (full width) |
 | ghost | `true`, `false` | `false` | Ghost Button |
 | round | `true`, `false` | `false` | Rounded Button |
+
+## Utilities
+
+* [Alignment](#alignment)
+
+### Alignment
+
+```javascript
+import React from 'react'
+import { Align } from './index'
+
+const Example = () => (
+  <Align style={{height: '300px'}}>
+    This will be aligned horizontally and vertically
+  </Align>
+)
+
+export default Example
+```
+
+#### Props
+
+| Prop | Values | Default | Description |
+|---|---|---|---|
+| vertical | `true`, `false` | `false` | Align vertically |
+| horizontal | `true`, `false` | `false` | Align horizontally |
+| absolute | `true`, `false` | `false` | Align in the center of a relative container |
