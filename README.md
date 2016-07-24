@@ -36,7 +36,7 @@ export default Example
 #### Props
 
 | Prop | Values | Default | Description |
-|---|---|---|
+|---|---|---|---|
 | size | `xsmall`, `small`, `medium`, `large`, `xlarge`, `super` | None | Container size |
 
 ### Grid
@@ -55,7 +55,7 @@ export default Example
 #### Props
 
 | Prop | Values | Default | Description |
-|---|---|---|
+|---|---|---|---|
 | wrap | `true`, `false` | `false` | Wrap grid cells |
 | align | `top`, `center`, `bottom` | None | Vertical alignment |
 | size | `small`, `medium`, `large` | None | Grid responsiveness (see [BlazeCSS doc](http://blazecss.com/objects/grid/)) |
@@ -82,7 +82,7 @@ export default Example
 #### Props
 
 | Prop | Values | Default | Description |
-|---|---|---|
+|---|---|---|---|
 | width | Any number between `5` and `100` (incremented by `5`) | None | Cell width in percent |
 | align | `top`, `center`, `bottom` | None | Vertical alignment |
 | offset | Any number between `5` and `100` (incremented by `5`) | None | Cell horizontal offset in percent |
@@ -108,7 +108,7 @@ export default Example
 #### Props
 
 | Prop | Values | Default | Description |
-|---|---|---|
+|---|---|---|---|
 | src | String | None | Image source |
 
 ### Panel
@@ -130,7 +130,7 @@ export default Example
 #### Props
 
 | Prop | Values | Default | Description |
-|---|---|---|
+|---|---|---|---|
 | topNav | `true`, `false` | `false` | Define if panel has a top nav |
 | bottomNav | `true`, `false` | `false` | Define if panel has a bottom nav |
 
@@ -165,7 +165,7 @@ export default Example
 #### Props
 
 | Prop | Values | Default | Description |
-|---|---|---|
+|---|---|---|---|
 | heading | String | None | Address heading text |
 
 ### Alert Container
@@ -186,7 +186,7 @@ export default Example
 #### Props
 
 | Prop | Values | Default | Description |
-|---|---|---|
+|---|---|---|---|
 | animate | `true`, `false` | None | Animated Alerts in container |
 | from | `top`, `bottom`, `left`, `right` | None | Animation direction |
 | speed | `slow`, `fast` | None | Animation speed |
@@ -209,7 +209,7 @@ export default Example
 #### Props
 
 | Prop | Values | Default | Description |
-|---|---|---|
+|---|---|---|---|
 | state | `primary`, `secondary`, `success`, `error` | None | Alert colour state |
 | animate | `true`, `false` | `false` | Animated Alert |
 | from | `top`, `bottom`, `left`, `right` | None | Animation direction |
@@ -232,7 +232,7 @@ export default Example
 #### Props
 
 | Prop | Values | Default | Description |
-|---|---|---|
+|---|---|---|---|
 | state | `primary`, `secondary`, `success`, `error` | None | Badge colour state |
 | round | `true`, `false` | `false` | Rounded Badge |
 
@@ -252,7 +252,7 @@ export default Example
 #### Props
 
 | Prop | Values | Default | Description |
-|---|---|---|
+|---|---|---|---|
 | position | `top`, `bottom`, `left`, `right` | None | Bubble position (change carret position) |
 | from | `top`, `bottom`, `left`, `right` | None | Animation direction |
 | speed | `slow`, `fast` | None | Animation speed |
@@ -276,7 +276,7 @@ export default Example
 #### Props
 
 | Prop | Values | Default | Description |
-|---|---|---|
+|---|---|---|---|
 | round | `true`, `false` | `false` | Rounded ButtonGroup |
 
 ### Button
@@ -295,7 +295,7 @@ export default Example
 #### Props
 
 | Prop | Values | Default | Description |
-|---|---|---|
+|---|---|---|---|
 | type | `button`, `input`, `link` | `button` | Button type (HTML element type) |
 | state | `primary`, `secondary`, `success`, `error` | None | Button colour state |
 | size | `xsmall`, `small`, `medium`, `large`, `xlarge`, `super` | None | Button size |
