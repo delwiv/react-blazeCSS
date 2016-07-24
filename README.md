@@ -35,9 +35,9 @@ export default Example
 
 #### Props
 
-| Prop | Values | Description |
+| Prop | Values | Default | Description |
 |---|---|---|
-| size | `xsmall`, `small`, `medium`, `large`, `xlarge`, `super` | Container size |
+| size | `xsmall`, `small`, `medium`, `large`, `xlarge`, `super` | None | Container size |
 
 ### Grid
 
@@ -54,13 +54,13 @@ export default Example
 
 #### Props
 
-| Prop | Values | Description |
+| Prop | Values | Default | Description |
 |---|---|---|
-| wrap | `true`, `false` | Wrap grid cells |
-| align | `top`, `center`, `bottom` | Vertical alignment |
-| size | `small`, `medium`, `large` | Grid responsiveness (see [BlazeCSS doc](http://blazecss.com/objects/grid/)) |
-| behavior | `fit`, `full` | Grid responsiveness (see [BlazeCSS doc](http://blazecss.com/objects/grid/)) |
-| noGutter | `true`, `false` | Remove cells gutters |
+| wrap | `true`, `false` | `false` | Wrap grid cells |
+| align | `top`, `center`, `bottom` | None | Vertical alignment |
+| size | `small`, `medium`, `large` | None | Grid responsiveness (see [BlazeCSS doc](http://blazecss.com/objects/grid/)) |
+| behavior | `fit`, `full` | None | Grid responsiveness (see [BlazeCSS doc](http://blazecss.com/objects/grid/)) |
+| noGutter | `true`, `false` | `false` | Remove cells gutters |
 
 **Note:** If `size` is provided, `behavior` must also be provided, and vice versa.
 
@@ -81,16 +81,16 @@ export default Example
 
 #### Props
 
-| Prop | Values | Description |
+| Prop | Values | Default | Description |
 |---|---|---|
-| width | Any number between `5` and `100` (incremented by `5`) | Cell width in percent |
-| align | `top`, `center`, `bottom` | Vertical alignment |
-| offset | Any number between `5` and `100` (incremented by `5`) | Cell horizontal offset in percent |
-| responsive | `small`, `medium`, `large` | Responsive suffix (see [BlazeCSS doc](http://blazecss.com/objects/grid/)) |
-| noGutter | `true`, `false` | Remove cell gutters |
-| fixed | `true`, `false` | Allow fixed cell width |
-| hidden | `true`, `false` | Hide cell |
-| visible | `true`, `false` | Show cell |
+| width | Any number between `5` and `100` (incremented by `5`) | None | Cell width in percent |
+| align | `top`, `center`, `bottom` | None | Vertical alignment |
+| offset | Any number between `5` and `100` (incremented by `5`) | None | Cell horizontal offset in percent |
+| responsive | `small`, `medium`, `large` | None | Responsive suffix (see [BlazeCSS doc](http://blazecss.com/objects/grid/)) |
+| noGutter | `true`, `false` | `false` | Remove cell gutters |
+| fixed | `true`, `false` | `false` | Allow fixed cell width |
+| hidden | `true`, `false` | `false` | Hide cell |
+| visible | `true`, `false` | `false` | Show cell |
 
 ### Image
 
@@ -107,9 +107,9 @@ export default Example
 
 #### Props
 
-| Prop | Values | Description |
+| Prop | Values | Default | Description |
 |---|---|---|
-| src | String | Image source |
+| src | String | None | Image source |
 
 ### Panel
 
@@ -129,10 +129,10 @@ export default Example
 
 #### Props
 
-| Prop | Values | Description |
+| Prop | Values | Default | Description |
 |---|---|---|
-| topNav | `true`, `false` | Define if panel has a top nav |
-| bottomNav | `true`, `false` | Define if panel has a bottom nav |
+| topNav | `true`, `false` | `false` | Define if panel has a top nav |
+| bottomNav | `true`, `false` | `false` | Define if panel has a bottom nav |
 
 ## Components
 
@@ -141,6 +141,8 @@ export default Example
 * [Alert](#alert)
 * [Badge](#badge)
 * [Bubble](#bubble)
+* [ButtonGroup](#button-group)
+* [Button](#button)
 
 ### Address
 
@@ -162,9 +164,9 @@ export default Example
 
 #### Props
 
-| Prop | Values | Description |
+| Prop | Values | Default | Description |
 |---|---|---|
-| heading | String | Address heading text |
+| heading | String | None | Address heading text |
 
 ### Alert Container
 
@@ -183,12 +185,12 @@ export default Example
 
 #### Props
 
-| Prop | Values | Description |
+| Prop | Values | Default | Description |
 |---|---|---|
-| animate | `true`, `false` | Define if Alerts in container are animated |
-| from | `top`, `bottom`, `left`, `right` | Animation direction |
-| speed | `slow`, `fast` | Animation speed |
-| trigger | `true`, `false` | Trigger animation |
+| animate | `true`, `false` | None | Animated Alerts in container |
+| from | `top`, `bottom`, `left`, `right` | None | Animation direction |
+| speed | `slow`, `fast` | None | Animation speed |
+| trigger | `true`, `false` | `false` | Trigger animation |
 
 ### Alert
 
@@ -204,17 +206,15 @@ const Example = () => (
 export default Example
 ```
 
-**Note:** Currently, Alerts doesn't have a close button, because Buttons are not yet available.
-
 #### Props
 
-| Prop | Values | Description |
+| Prop | Values | Default | Description |
 |---|---|---|
-| state | `primary`, `secondary`, `success`, `error` | Alert colour state |
-| animate | `true`, `false` | Define if Alert is animated |
-| from | `top`, `bottom`, `left`, `right` | Animation direction |
-| speed | `slow`, `fast` | Animation speed |
-| trigger | `true`, `false` | Trigger animation |
+| state | `primary`, `secondary`, `success`, `error` | None | Alert colour state |
+| animate | `true`, `false` | `false` | Animated Alert |
+| from | `top`, `bottom`, `left`, `right` | None | Animation direction |
+| speed | `slow`, `fast` | None | Animation speed |
+| trigger | `true`, `false` | `false` | Trigger animation |
 
 ### Badge
 
@@ -231,10 +231,10 @@ export default Example
 
 #### Props
 
-| Prop | Values | Description |
+| Prop | Values | Default | Description |
 |---|---|---|
-| state | `primary`, `secondary`, `success`, `error` | Badge colour state |
-| round | `true`, `false` | Define if Badge is rounded |
+| state | `primary`, `secondary`, `success`, `error` | None | Badge colour state |
+| round | `true`, `false` | `false` | Rounded Badge |
 
 ### Bubble
 
@@ -251,9 +251,54 @@ export default Example
 
 #### Props
 
-| Prop | Values | Description |
+| Prop | Values | Default | Description |
 |---|---|---|
-| position | `top`, `bottom`, `left`, `right` | Bubble position (change carret position) |
-| from | `top`, `bottom`, `left`, `right` | Animation direction |
-| speed | `slow`, `fast` | Animation speed |
-| trigger | `true`, `false` | Trigger animation |
+| position | `top`, `bottom`, `left`, `right` | None | Bubble position (change carret position) |
+| from | `top`, `bottom`, `left`, `right` | None | Animation direction |
+| speed | `slow`, `fast` | None | Animation speed |
+| trigger | `true`, `false` | `false` | Trigger animation |
+
+### Button Group
+
+```javascript
+import React from 'react'
+import { ButtonGroup, Button } from './index'
+
+const Example = () => (
+  <ButtonGroup>
+    <Button>Default button</Button>
+  </ButtonGroup>
+)
+
+export default Example
+```
+
+#### Props
+
+| Prop | Values | Default | Description |
+|---|---|---|
+| round | `true`, `false` | `false` | Rounded ButtonGroup |
+
+### Button
+
+```javascript
+import React from 'react'
+import { Button } from './index'
+
+const Example = () => (
+  <Button>Default button</Button>
+)
+
+export default Example
+```
+
+#### Props
+
+| Prop | Values | Default | Description |
+|---|---|---|
+| type | `button`, `input`, `link` | `button` | Button type (HTML element type) |
+| state | `primary`, `secondary`, `success`, `error` | None | Button colour state |
+| size | `xsmall`, `small`, `medium`, `large`, `xlarge`, `super` | None | Button size |
+| block | `true`, `false` | `false` | Block Button (full width) |
+| ghost | `true`, `false` | `false` | Ghost Button |
+| round | `true`, `false` | `false` | Rounded Button |
