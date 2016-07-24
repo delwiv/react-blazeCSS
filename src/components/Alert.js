@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
+import { Button } from './Button'
 import { positions, speeds, states } from '../constants'
 
 import s from 'blaze/scss/components.alerts.scss'
@@ -28,8 +29,7 @@ AlertContainer.propTypes = {
   trigger: PropTypes.bool
 }
 
-// @TODO: Ajouter le bouton de fermeture
-const Alert = ({ state, animate, from, speed, trigger, children, ...rest }) => {
+const Alert = ({ state, animate, from, speed, trigger, closable, children, ...rest }) => {
   const className = classnames(
     s['c-alerts__alert'], {
       [s[`c-alerts__alert--${state}`]]: state,
@@ -42,6 +42,7 @@ const Alert = ({ state, animate, from, speed, trigger, children, ...rest }) => {
 
   return (
     <div className={className} {...rest}>
+      {closable ? <Button close /> : null}
       {children}
     </div>
   )
@@ -52,7 +53,12 @@ Alert.propTypes = {
   animate: PropTypes.bool,
   from: PropTypes.oneOf(positions),
   speed: PropTypes.oneOf(speeds),
-  trigger: PropTypes.bool
+  trigger: PropTypes.bool,
+  closable: PropTypes.bool
+}
+
+Alert.defaultProps = {
+  closable: true
 }
 
 export {

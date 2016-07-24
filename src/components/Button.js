@@ -23,7 +23,7 @@ ButtonGroup.propTypes = {
   rounded: PropTypes.bool
 }
 
-const Button = ({ type, state, size, block, ghost, rounded, children, ...rest }) => {
+const Button = ({ type, state, size, block, ghost, rounded, close, children, ...rest }) => {
   const className = classnames(
     s['c-button'], {
       [s[`c-button--${state}`]]: state && !ghost,
@@ -34,6 +34,10 @@ const Button = ({ type, state, size, block, ghost, rounded, children, ...rest })
       [s['c-button--rounded']]: rounded
     }
   )
+  
+  if (close) {
+    return <button className='c-button c-button--close'>×</button>
+  }
 
   switch (type) {
     case 'button':
@@ -67,7 +71,8 @@ Button.propTypes = {
   size: PropTypes.oneOf(extendedSizes),
   block: PropTypes.bool,
   ghost: PropTypes.bool,
-  rounded: PropTypes.bool
+  rounded: PropTypes.bool,
+  close: PropTypes.bool
 }
 
 export {
