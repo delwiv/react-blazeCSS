@@ -50,11 +50,7 @@ Grid.propTypes = {
       )
     }
   },
-  noGutter: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.element
-  ])
+  noGutter: PropTypes.bool
 }
 
 const Cell = ({ width, align, offset, responsive, noGutter, fixed, hidden, visible, children, ...rest }) => {
@@ -86,11 +82,7 @@ Cell.propTypes = {
   noGutter: PropTypes.bool,
   fixed: PropTypes.bool,
   hidden: PropTypes.bool,
-  visible: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.element
-  ])
+  visible: PropTypes.bool
 }
 
 export {

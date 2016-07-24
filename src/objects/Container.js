@@ -20,11 +20,7 @@ const Container = ({ size, children, ...rest }) => {
 }
 
 Container.propTypes = {
-  size: PropTypes.oneOf(extendedSizes),
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.element
-  ])
+  size: PropTypes.oneOf(extendedSizes)
 }
 
 export default Container
