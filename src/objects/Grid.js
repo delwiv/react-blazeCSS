@@ -61,8 +61,8 @@ const Cell = ({ width, align, offset, responsive, noGutter, fixed, hidden, visib
   const className = classnames(
     s1['o-grid__cell'], {
       [s1[`o-grid__cell--width-${width}${responsive ? `@${responsive}` : ''}`]]: width && width % 5 === 0 &&
-        responsive ? responsive : true,
-      [s1[`o-grid__cell--offset-${offset}`]]: offset && offset % 5 === 0,
+        width > 0 && width <= 100 && responsive ? responsive : true,
+      [s1[`o-grid__cell--offset-${offset}`]]: offset && offset % 5 === 0 && offset > 0 && offset <= 100,
       [s1[`o-grid__cell--${align}`]]: align,
       [s1['o-grid__cell--no-gutter']]: noGutter,
       [s1['o-grid__cell--width-fixed']]: fixed,

@@ -12,7 +12,7 @@ const Address = ({ heading, children, ...rest }) => {
 }
 
 Address.propTypes = {
-  heading: PropTypes.bool
+  heading: PropTypes.string
 }
 
 export default Address
