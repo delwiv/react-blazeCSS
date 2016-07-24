@@ -1,0 +1,54 @@
+{
+  "name": "react-blazecss",
+  "version": "0.0.1",
+  "description": "BlazeCSS with ReactJS!",
+  "main": "index.js",
+  "scripts": {
+    "start": "better-npm-run start",
+    "build": "better-npm-run build",
+    "serve": "node server.js"
+  },
+  "betterScripts": {
+    "start": {
+      "command": "hjs-dev-server",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "build": {
+      "command": "webpack --progress --colors",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+  "keywords": [
+    "react",
+    "blazecss"
+  ],
+  "author": "Nicolas Goudry <goudry.nicolas@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "blaze": "^2.9.0",
+    "classnames": "^2.2.5",
+    "react": "^15.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-2": "^6.11.0",
+    "better-npm-run": "0.0.9",
+    "css-loader": "^0.23.1",
+    "hjs-webpack": "^8.3.0",
+    "node-sass": "^3.8.0",
+    "postcss-loader": "^0.9.1",
+    "react-hot-loader": "^1.3.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
