@@ -10,17 +10,30 @@ Any help would be appreciated, specially for building to production and making t
 
 ---
 
+## Summary
+
+* [Objects](#objects)
+  * [Container](#container)
+  * [Grid](#grid)
+  * [Cell](#cell)
+  * [Image](#image)
+  * [Panel](#panel)
+* [Components](#components)
+  * [Address](#address)
+  * [AlertContainer](#alert-container)
+  * [Alert](#alert)
+  * [Badge](#badge)
+  * [Bubble](#bubble)
+  * [ButtonGroup](#button-group)
+  * [Button](#button)
+* [Utilities](#utilities)
+  * [Alignment](#alignment)
+
 ## Usage
 
 Currently, you just have to import what you need from `index.js`.
 
 ## Objects
-
-* [Container](#container)
-* [Grid](#grid)
-* [Cell](#cell)
-* [Image](#image)
-* [Panel](#panel)
 
 ### Container
 
@@ -135,14 +148,6 @@ export default Example
 | bottomNav | `true`, `false` | `false` | Define if panel has a bottom nav |
 
 ## Components
-
-* [Address](#address)
-* [AlertContainer](#alert-container)
-* [Alert](#alert)
-* [Badge](#badge)
-* [Bubble](#bubble)
-* [ButtonGroup](#button-group)
-* [Button](#button)
 
 ### Address
 
@@ -304,8 +309,6 @@ export default Example
 | round | `true`, `false` | `false` | Rounded Button |
 
 ## Utilities
-
-* [Alignment](#alignment)
 
 ### Alignment
 
