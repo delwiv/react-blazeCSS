@@ -16,8 +16,8 @@ const Align = ({ vertical, horizontal, absolute, children, ...rest }) => {
   }
 
   return (
-    <div className={s['u-center-block']}>
-      <div className={className} {...rest}>
+    <div className={s['u-center-block']} {...rest}>
+      <div className={className}>
         {children}
       </div>
     </div>
