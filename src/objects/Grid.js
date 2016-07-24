@@ -93,7 +93,8 @@ Cell.propTypes = {
       )
     } else if (props.visible) {
       return new Error(
-        'Invalid prop `' + propName + '` on `' + componentName + '`. `visible` is already defined. Validation failed.'
+        'Invalid prop `' + propName + '` supplied to `' + componentName + '`. `visible` is already defined. ' +
+        'Validation failed.'
       )
     }
   },
@@ -104,7 +105,8 @@ Cell.propTypes = {
       )
     } else if (props.hidden) {
       return new Error(
-        'Invalid prop `' + propName + '` on `' + componentName + '`. `hidden` is already defined. Validation failed.'
+        'Invalid prop `' + propName + '` supplied to `' + componentName + '`. `hidden` is already defined. ' +
+        'Validation failed.'
       )
     }
   }
