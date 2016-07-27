@@ -10,6 +10,7 @@ import { AlertContainer, Alert } from './src/components/Alert'
 import Badge from './src/components/Badge'
 import Bubble from './src/components/Bubble'
 import { ButtonGroup, Button } from './src/components/Button'
+import { Card, CardContent, CardHeading, CardItem, CardDivider } from './src/components/Card'
 
 // Utilities
 import Align from './src/utilities/Align'
@@ -28,5 +29,10 @@ export {
   Bubble,
   ButtonGroup,
   Button,
+  Card,
+  CardContent,
+  CardHeading,
+  CardItem,
+  CardDivider,
   Align
 }
