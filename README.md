@@ -136,11 +136,14 @@ export default Example
 
 ```javascript
 import React from 'react'
-import { Panel } from './index'
+import { Panel, Nav } from './index'
+
+const createNav = (title) => (
+  <Nav title={title} />
+)
 
 const Example = () => (
-  <Panel topNav={true}>
-    <Nav title='Header' />
+  <Panel topNav={createNav('Header')} bottomNav={createNav('Footer')}>
     Panel content
   </Panel>
 )
@@ -152,8 +155,8 @@ export default Example
 
 | Prop | Values | Default | Description |
 |---|---|---|---|
-| topNav | `true`, `false` | `false` | Define if panel has a top nav |
-| bottomNav | `true`, `false` | `false` | Define if panel has a bottom nav |
+| topNav | React Element | None | Panel top nav |
+| bottomNav | React Element | None | Panel bottom nav |
 
 [Back to top](#react-blaze-css)
 
