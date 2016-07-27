@@ -4,6 +4,10 @@
     "react",
     "stage-2"
   ],
+  "plugins": [
+    "transform-class-properties",
+    "transform-inline-environment-variables"
+  ],
   "env": {
     "development": {
       "presets": [
