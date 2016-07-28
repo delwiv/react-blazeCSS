@@ -1,13 +1,11 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
-import s from 'blaze/scss/utilities.alignment.scss'
-
 const Align = ({ vertical, horizontal, absolute, children, ...rest }) => {
   const className = classnames(
-    s['u-center-block__content'], {
-      [s['u-center-block--vertical']]: vertical,
-      [s['u-center-block--horizontal']]: horizontal
+    'u-center-block__content', {
+      ['u-center-block--vertical']: vertical,
+      ['u-center-block--horizontal']: horizontal
     }
   )
 
@@ -16,7 +14,7 @@ const Align = ({ vertical, horizontal, absolute, children, ...rest }) => {
   }
 
   return (
-    <div className={s['u-center-block']} {...rest}>
+    <div className='u-center-block' {...rest}>
       <div className={className}>
         {children}
       </div>

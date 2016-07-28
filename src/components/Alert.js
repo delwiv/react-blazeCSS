@@ -4,15 +4,12 @@ import classnames from 'classnames'
 import { Button } from './Button'
 import { positions, speeds, states } from '../constants'
 
-import s from 'blaze/scss/components.alerts.scss'
-import a from 'blaze/scss/animations.alerts.scss'
-
 const AlertContainer = ({ animate, from, speed, trigger, children, ...rest }) => {
   const className = classnames({
-    [a['a-alerts']]: animate,
-    [a['a-alerts__alert']]: trigger,
-    [a[`a-alerts__alert--${speed}`]]: speed && /slow|fast/.test(speed),
-    [a[`a-alerts__alert--${from}`]]: from && /top|bottom|left|right/.test(from)
+    ['a-alerts']: animate,
+    ['a-alerts__alert']: trigger,
+    [`a-alerts__alert--${speed}`]: speed && /slow|fast/.test(speed),
+    [`a-alerts__alert--${from}`]: from && /top|bottom|left|right/.test(from)
   })
 
   return (
@@ -35,12 +32,12 @@ AlertContainer.defaultProps = {
 
 const Alert = ({ state, animate, from, speed, trigger, closable, children, ...rest }) => {
   const className = classnames(
-    s['c-alerts__alert'], {
-      [s[`c-alerts__alert--${state}`]]: state,
-      [a['a-alerts']]: animate,
-      [a['a-alerts__alert']]: trigger,
-      [a[`a-alerts__alert--${speed}`]]: speed,
-      [a[`a-alerts__alert--${from}`]]: from
+    'c-alerts__alert', {
+      [`c-alerts__alert--${state}`]: state,
+      ['a-alerts']: animate,
+      ['a-alerts__alert']: trigger,
+      [`a-alerts__alert--${speed}`]: speed,
+      [`a-alerts__alert--${from}`]: from
     }
   )
 

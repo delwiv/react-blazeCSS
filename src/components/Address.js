@@ -1,11 +1,9 @@
 import React, { PropTypes } from 'react'
 
-import s from 'blaze/scss/components.addresses.scss'
-
 const Address = ({ heading, children, ...rest }) => {
   return (
-    <address className={s['c-address']} {...rest}>
-      { heading ? <span className={s['c-address__heading']}>{heading}</span> : null }
+    <address className='c-address' {...rest}>
+      { heading ? <span className='c-address__heading'>{heading}</span> : null }
       {children}
     </address>
   )

@@ -3,16 +3,13 @@ import classnames from 'classnames'
 
 import { alignments, sizes, sizesRegex, behaviorRegex } from '../constants'
 
-import s1 from 'blaze/scss/objects.grid.scss'
-import s2 from 'blaze/scss/objects.grid.responsive.scss'
-
 const Grid = ({ wrap, align, size, behavior, noGutter, children, ...rest }) => {
   const className = classnames(
-    s1['o-grid'], {
-      [s1['o-grid--wrap']]: wrap,
-      [s1[`o-grid--${align}`]]: align,
-      [s2[`o-grid--${size}-${behavior}`]]: size && behavior,
-      [s1['o-grid--no-gutter']]: noGutter
+    'o-grid', {
+      ['o-grid--wrap']: wrap,
+      [`o-grid--${align}`]: align,
+      [`o-grid--${size}-${behavior}`]: size && behavior,
+      ['o-grid--no-gutter']: noGutter
     }
   )
 
@@ -60,15 +57,15 @@ Grid.defaultProps = {
 
 const Cell = ({ width, align, offset, responsive, noGutter, fixed, hidden, visible, children, ...rest }) => {
   const className = classnames(
-    s1['o-grid__cell'], {
-      [s1[`o-grid__cell--width-${width}${responsive ? `@${responsive}` : ''}`]]: width && width % 5 === 0 &&
+    'o-grid__cell', {
+      [`o-grid__cell--width-${width}${responsive ? `@${responsive}` : ''}`]: width && width % 5 === 0 &&
         width > 0 && width <= 100 && responsive ? responsive : true,
-      [s1[`o-grid__cell--offset-${offset}`]]: offset && offset % 5 === 0 && offset > 0 && offset <= 100,
-      [s1[`o-grid__cell--${align}`]]: align,
-      [s1['o-grid__cell--no-gutter']]: noGutter,
-      [s1['o-grid__cell--width-fixed']]: fixed,
-      [s1['o-grid__cell--visible']]: visible,
-      [s1['o-grid__cell--hidden']]: hidden
+      [`o-grid__cell--offset-${offset}`]: offset && offset % 5 === 0 && offset > 0 && offset <= 100,
+      [`o-grid__cell--${align}`]: align,
+      ['o-grid__cell--no-gutter']: noGutter,
+      ['o-grid__cell--width-fixed']: fixed,
+      ['o-grid__cell--visible']: visible,
+      ['o-grid__cell--hidden']: hidden
     }
   )
 

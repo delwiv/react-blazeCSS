@@ -1,15 +1,13 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
-import s from 'blaze/scss/components.cards.scss'
-
 const Card = ({ shadow, group, children, ...rest }) => {
   const className = classnames(
-    s['c-card'], {
-      [s['c-card--high']]: shadow === 'high',
-      [s['c-card--higher']]: shadow === 'higher',
-      [s['c-card--highest']]: shadow === 'highest',
-      [s['c-card--grouped']]: group
+    'c-card', {
+      ['c-card--high']: shadow === 'high',
+      ['c-card--higher']: shadow === 'higher',
+      ['c-card--highest']: shadow === 'highest',
+      ['c-card--grouped']: group
     }
   )
 
@@ -31,7 +29,7 @@ Card.propTypes = {
 }
 
 const CardContent = ({ children, ...rest }) => (
-  <div className={s['c-card__content']}>
+  <div className='c-card__content' {...rest}>
     {children}
   </div>
 )
@@ -44,16 +42,16 @@ const CardHeading = ({ children, ...rest }) => {
 }
 
 const CardItem = ({ children, ...rest }) => (
-  <div className={s['c-card__item']} {...rest}>
+  <div className='c-card__item' {...rest}>
     {children}
   </div>
 )
 
 const CardDivider = ({ group, children, ...rest }) => {
   const className = classnames({
-    [s['c-card__content']]: !group,
-    [s['c-card__content--divider']]: !group,
-    [s['c-card__group-divider']]: group
+    ['c-card__content']: !group,
+    ['c-card__content--divider']: !group,
+    ['c-card__group-divider']: group
   })
   
   return (

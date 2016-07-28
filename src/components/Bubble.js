@@ -3,16 +3,13 @@ import classnames from 'classnames'
 
 import { positions, speeds } from '../constants'
 
-import s from 'blaze/scss/components.bubbles.scss'
-import a from 'blaze/scss/animations.bubbles.scss'
-
 const Bubble = ({ position, from, speed, trigger, children, ...rest }) => {
   const className = classnames(
-    s['c-bubble'], {
-      [s[`c-bubble--${position}`]]: position,
-      [a['a-bubble']]: trigger,
-      [a[`a-bubble--${speed}`]]: speed,
-      [a[`a-bubble--${from}`]]: from
+    'c-bubble', {
+      [`c-bubble--${position}`]: position,
+      ['a-bubble']: trigger,
+      [`a-bubble--${speed}`]: speed,
+      [`a-bubble--${from}`]: from
     }
   )
 

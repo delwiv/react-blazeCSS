@@ -3,12 +3,10 @@ import classnames from 'classnames'
 
 import { extendedSizes } from '../constants'
 
-import s from 'blaze/scss/objects.containers.scss'
-
 const Container = ({ size, children, ...rest }) => {
   const className = classnames(
-    s['o-container'], {
-      [s[`o-container--${size}`]]: size
+    'o-container', {
+      [`o-container--${size}`]: size
     }
   )
 

@@ -3,13 +3,11 @@ import classnames from 'classnames'
 
 import { states } from '../constants'
 
-import s from 'blaze/scss/components.badges.scss'
-
 const Badge = ({ state, round, children, ...rest }) => {
   const className = classnames(
-    s['c-badge'], {
-      [s[`c-badge--${state}`]]: state,
-      [s['c-badge--rounded']]: round
+    'c-badge', {
+      [`c-badge--${state}`]: state,
+      ['c-badge--rounded']: round
     }
   )
 
