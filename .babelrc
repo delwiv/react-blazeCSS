@@ -7,12 +7,5 @@
   "plugins": [
     "transform-class-properties",
     "transform-inline-environment-variables"
-  ],
-  "env": {
-    "development": {
-      "presets": [
-        "react-hmre"
-      ]
-    }
-  }
+  ]
 }
