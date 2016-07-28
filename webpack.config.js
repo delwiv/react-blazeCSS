@@ -1,20 +1,36 @@
-var getConfig = require('hjs-webpack')
+var webpack = require('webpack');
+var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+var path = require('path');
+var libraryName = 'react-blazecss';
+var outputFile = libraryName + '.js';
 
-var config = getConfig({
-  in: 'test-index.js',
-  out: 'dist',
-  clearBeforeBuild: true
-})
+var config = {
+  entry: __dirname + '/src/index.js',
+  devtool: 'source-map',
+  output: {
+    path: __dirname + '/lib',
+    filename: outputFile,
+    library: libraryName,
+    libraryTarget: 'umd',
+    umdNamedDefine: true
+  },
+  module: {
+    loaders: [ {
+      test: /\.js$/,
+      loader: 'babel',
+      exclude: /(node_modules)/
+    }]
+  },
+  plugins: [
+    new UglifyJsPlugin({ minimize: true })
+  ],
+  resolve: {
+    root: path.resolve('./src'),
+    extensions: ['', '.js']
+  },
+  externals: [
+    'react'
+  ]
+};
 
-if (config.module && config.module.loaders) {
-  config.module.loaders.forEach(function (loader) {
-    if (loader.loader.indexOf('css-loader') > -1) {
-      loader.loader = loader.loader.replace(
-        'css-loader',
-        'css-loader?modules&localIdentName=[local]'
-      )
-    }
-  })
-}
-
-module.exports = config
+module.exports = config;
