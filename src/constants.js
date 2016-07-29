@@ -13,9 +13,10 @@ const sizes = [
   'large'
 ]
 
-const sizesRegex = new RegExp(['/', sizes.map((size) => size).join('|'), '/'].join(''))
-
-const behaviorRegex = new RegExp('/fit|full/')
+const behaviors = [
+  'fit',
+  'full'
+]
 
 const alignments = [
   'top',
@@ -42,13 +43,17 @@ const states = [
   'error'
 ]
 
+const defaults = {
+  extendedSizes: 'medium'
+}
+
 export {
   extendedSizes,
   sizes,
-  sizesRegex,
-  behaviorRegex,
+  behaviors,
   alignments,
   positions,
   speeds,
-  states
+  states,
+  defaults
 }
