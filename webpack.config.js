@@ -43,6 +43,6 @@ var config = {
   externals: [{
     'react': 'React'
   }]
-};
+}
 
-module.exports = config;
+module.exports = config
