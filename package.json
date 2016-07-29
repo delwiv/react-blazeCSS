@@ -1,27 +1,19 @@
 {
   "name": "react-blazecss",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "BlazeCSS with ReactJS!",
-  "main": "index.js",
+  "main": "lib/react-blazecss.min.js",
   "scripts": {
     "build": "better-npm-run build"
   },
   "betterScripts": {
     "build": {
-      "command": "webpack --progress --colors",
+      "command": "webpack",
       "env": {
         "NODE_ENV": "production"
       }
     }
   },
-  "keywords": [
-    "react",
-    "blazeCSS",
-    "ITCSS",
-    "BEM"
-  ],
-  "author": "Nicolas Goudry <goudry.nicolas@gmail.com>",
-  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.11.4",
     "babel-loader": "^6.2.4",
@@ -32,6 +24,19 @@
     "babel-preset-stage-2": "^6.11.0",
     "better-npm-run": "0.0.9",
     "classnames": "^2.2.5",
+    "react": ">=15.0.0",
     "webpack": "^1.13.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicolas-goudry/react-blazeCSS"
+  },
+  "keywords": [
+    "react",
+    "blazeCSS",
+    "ITCSS",
+    "BEM"
+  ],
+  "author": "Nicolas Goudry <goudry.nicolas@gmail.com>",
+  "license": "MIT"
 }
