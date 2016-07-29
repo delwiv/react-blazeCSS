@@ -4,7 +4,8 @@
   "description": "BlazeCSS with ReactJS!",
   "main": "lib/react-blazecss.min.js",
   "scripts": {
-    "build": "better-npm-run build"
+    "build": "better-npm-run build",
+    "start": "cd demo && npm run start"
   },
   "betterScripts": {
     "build": {

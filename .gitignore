@@ -1,7 +1,2 @@
 node_modules
 .idea
-
-demo/src
-demo/.babelrc
-demo/package.json
-demo/webpack.config.js
