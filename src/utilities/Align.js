@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
-const Align = ({ vertical, horizontal, absolute, children, ...rest }) => {
-  const className = classnames(
+const Align = ({ vertical, horizontal, absolute, className, children, ...rest }) => {
+  className = classnames(
+    className,
     'u-center-block__content', {
       ['u-center-block--vertical']: vertical,
       ['u-center-block--horizontal']: horizontal
@@ -10,7 +11,16 @@ const Align = ({ vertical, horizontal, absolute, children, ...rest }) => {
   )
 
   if (absolute) {
-    return <div className='u-absolute-center' {...rest}>{children}</div>
+    className = classnames(
+      className,
+      'u-absolute-center'
+    )
+
+    return (
+      <div className={className} {...rest}>
+        {children}
+      </div>
+    )
   }
 
   return (
@@ -41,7 +51,8 @@ Align.propTypes = {
         'Validation failed.'
       )
     }
-  }
+  },
+  className: PropTypes.string
 }
 
 Align.defaultProps = {

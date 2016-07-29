@@ -3,8 +3,9 @@ import classnames from 'classnames'
 
 import { states, extendedSizes } from '../constants'
 
-const ButtonGroup = ({ round, children, ...rest }) => {
-  const className = classnames(
+const ButtonGroup = ({ round, className, children, ...rest }) => {
+  className = classnames(
+    className,
     'c-button-group', {
       ['c-button-group--rounded']: round
     }
@@ -18,15 +19,17 @@ const ButtonGroup = ({ round, children, ...rest }) => {
 }
 
 ButtonGroup.propTypes = {
-  round: PropTypes.bool
+  round: PropTypes.bool,
+  className: PropTypes.string
 }
 
 ButtonGroup.defaultProps = {
   round: false
 }
 
-const Button = ({ type, state, size, block, ghost, round, close, children, ...rest }) => {
-  const className = classnames(
+const Button = ({ type, state, size, block, ghost, round, close, className, children, ...rest }) => {
+  className = classnames(
+    className,
     'c-button', {
       [`c-button--${state}`]: state && !ghost,
       [`c-button--ghost-${state}`]: state && ghost,
@@ -38,7 +41,13 @@ const Button = ({ type, state, size, block, ghost, round, close, children, ...re
   )
   
   if (close) {
-    return <button className='c-button c-button--close'>×</button>
+    className = classnames(
+      className,
+      'c-button',
+      'c-button--close'
+    )
+    
+    return <button className={className}>×</button>
   }
 
   switch (type) {
@@ -68,7 +77,8 @@ Button.propTypes = {
   block: PropTypes.bool,
   ghost: PropTypes.bool,
   round: PropTypes.bool,
-  close: PropTypes.bool
+  close: PropTypes.bool,
+  className: PropTypes.string
 }
 
 Button.defaultProps = {

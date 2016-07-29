@@ -1,8 +1,14 @@
 import React, { PropTypes } from 'react'
+import classnames from 'classnames'
 
-const Address = ({ heading, children, ...rest }) => {
+const Address = ({ heading, className, children, ...rest }) => {
+  className = classnames(
+    className,
+    'c-address'
+  )
+  
   return (
-    <address className='c-address' {...rest}>
+    <address className={className} {...rest}>
       { heading ? <span className='c-address__heading'>{heading}</span> : null }
       {children}
     </address>
@@ -10,7 +16,8 @@ const Address = ({ heading, children, ...rest }) => {
 }
 
 Address.propTypes = {
-  heading: PropTypes.string
+  heading: PropTypes.string,
+  className: PropTypes.string
 }
 
 Address.defaultProps = {

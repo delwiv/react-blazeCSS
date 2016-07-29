@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
-const Card = ({ shadow, group, children, ...rest }) => {
-  const className = classnames(
+const Card = ({ shadow, group, className, children, ...rest }) => {
+  className = classnames(
+    className,
     'c-card', {
       ['c-card--high']: shadow === 'high',
       ['c-card--higher']: shadow === 'higher',
@@ -23,36 +24,62 @@ Card.propTypes = {
   shadow: PropTypes.oneOf([
     'high',
     'higher',
-    'highest',
+    'highest'
   ]),
-  group: PropTypes.bool
+  group: PropTypes.bool,
+  className: PropTypes.string
 }
 
-const CardContent = ({ children, ...rest }) => (
-  <div className='c-card__content' {...rest}>
-    {children}
-  </div>
-)
+const CardContent = ({ className, children, ...rest }) => {
+  className = classnames(
+    className,
+    'c-card__content'
+  )
+      
+  return (
+    <div className={className} {...rest}>
+      {children}
+    </div>
+  )
+}
 
-const CardHeading = ({ children, ...rest }) => {
+CardContent.propTypes = {
+  className: PropTypes.string
+}
+
+const CardHeading = ({ className, children, ...rest }) => {
   return CardDivider({
+    className,
     children,
     ...rest
   })
 }
 
-const CardItem = ({ children, ...rest }) => (
-  <div className='c-card__item' {...rest}>
-    {children}
-  </div>
-)
+const CardItem = ({ className, children, ...rest }) => {
+  className = classnames(
+    className,
+    'c-card__item'
+  )
+  
+  return (
+    <div className={className} {...rest}>
+      {children}
+    </div>
+  )
+}
 
-const CardDivider = ({ group, children, ...rest }) => {
-  const className = classnames({
-    ['c-card__content']: !group,
-    ['c-card__content--divider']: !group,
-    ['c-card__group-divider']: group
-  })
+CardItem.propTypes = {
+  className: PropTypes.string
+}
+
+const CardDivider = ({ group, className, children, ...rest }) => {
+  className = classnames(
+    className, {
+      ['c-card__content']: !group,
+      ['c-card__content--divider']: !group,
+      ['c-card__group-divider']: group
+    }
+  )
   
   return (
     <div className={className} {...rest}>
@@ -62,7 +89,8 @@ const CardDivider = ({ group, children, ...rest }) => {
 }
 
 CardDivider.propTypes = {
-  group: PropTypes.bool
+  group: PropTypes.bool,
+  className: PropTypes.string
 }
 
 export {

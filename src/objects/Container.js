@@ -3,8 +3,9 @@ import classnames from 'classnames'
 
 import { extendedSizes } from '../constants'
 
-const Container = ({ size, children, ...rest }) => {
-  const className = classnames(
+const Container = ({ size, className, children, ...rest }) => {
+  className = classnames(
+    className,
     'o-container', {
       [`o-container--${size}`]: size
     }
@@ -18,7 +19,8 @@ const Container = ({ size, children, ...rest }) => {
 }
 
 Container.propTypes = {
-  size: PropTypes.oneOf(extendedSizes)
+  size: PropTypes.oneOf(extendedSizes),
+  className: PropTypes.string
 }
 
 export default Container

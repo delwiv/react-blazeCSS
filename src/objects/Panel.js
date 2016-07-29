@@ -4,7 +4,8 @@ import classnames from 'classnames'
 export default class Panel extends Component {
   static propTypes = {
     topNav: PropTypes.element,
-    bottomNav: PropTypes.element
+    bottomNav: PropTypes.element,
+    className: PropTypes.string
   }
 
   constructor (props) {
@@ -25,8 +26,9 @@ export default class Panel extends Component {
   }
 
   render () {
-    const { topNav = null, bottomNav = null, children, ...rest } = this.props
-    const className = classnames(
+    const { topNav, bottomNav, className, children, ...rest } = this.props
+    const style = classnames(
+      className,
       'o-panel', {
         ['o-panel--nav-top']: topNav,
         ['o-panel--nav-bottom']: bottomNav
@@ -36,7 +38,7 @@ export default class Panel extends Component {
     return (
       <div className='o-panel-container' {...rest} ref={this.getPanel}>
         {topNav}
-        <div className={className}>
+        <div className={style}>
           {children}
         </div>
         {bottomNav}

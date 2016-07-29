@@ -4,13 +4,15 @@ import classnames from 'classnames'
 import { Button } from './Button'
 import { positions, speeds, states } from '../constants'
 
-const AlertContainer = ({ animate, from, speed, trigger, children, ...rest }) => {
-  const className = classnames({
-    ['a-alerts']: animate,
-    ['a-alerts__alert']: trigger,
-    [`a-alerts__alert--${speed}`]: speed && /slow|fast/.test(speed),
-    [`a-alerts__alert--${from}`]: from && /top|bottom|left|right/.test(from)
-  })
+const AlertContainer = ({ animate, from, speed, trigger, className, children, ...rest }) => {
+  className = classnames(
+    className, {
+      ['a-alerts']: animate,
+      ['a-alerts__alert']: trigger,
+      [`a-alerts__alert--${speed}`]: speed && /slow|fast/.test(speed),
+      [`a-alerts__alert--${from}`]: from && /top|bottom|left|right/.test(from)
+    }
+  )
 
   return (
     <div className={className} {...rest}>
@@ -23,15 +25,17 @@ AlertContainer.propTypes = {
   animate: PropTypes.bool,
   from: PropTypes.oneOf(positions),
   speed: PropTypes.oneOf(speeds),
-  trigger: PropTypes.bool
+  trigger: PropTypes.bool,
+  className: PropTypes.string
 }
 
 AlertContainer.defaultProps = {
   trigger: false
 }
 
-const Alert = ({ state, animate, from, speed, trigger, closable, children, ...rest }) => {
-  const className = classnames(
+const Alert = ({ state, animate, from, speed, trigger, closable, className, children, ...rest }) => {
+  className = classnames(
+    className,
     'c-alerts__alert', {
       [`c-alerts__alert--${state}`]: state,
       ['a-alerts']: animate,
@@ -55,7 +59,8 @@ Alert.propTypes = {
   from: PropTypes.oneOf(positions),
   speed: PropTypes.oneOf(speeds),
   trigger: PropTypes.bool,
-  closable: PropTypes.bool
+  closable: PropTypes.bool,
+  className: PropTypes.string
 }
 
 Alert.defaultProps = {

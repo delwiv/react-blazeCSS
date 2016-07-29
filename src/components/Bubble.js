@@ -3,8 +3,9 @@ import classnames from 'classnames'
 
 import { positions, speeds } from '../constants'
 
-const Bubble = ({ position, from, speed, trigger, children, ...rest }) => {
-  const className = classnames(
+const Bubble = ({ position, from, speed, trigger, className, children, ...rest }) => {
+  className = classnames(
+    className,
     'c-bubble', {
       [`c-bubble--${position}`]: position,
       ['a-bubble']: trigger,
@@ -24,7 +25,8 @@ Bubble.propTypes = {
   position: PropTypes.oneOf(positions),
   from: PropTypes.oneOf(positions),
   speed: PropTypes.oneOf(speeds),
-  trigger: PropTypes.bool
+  trigger: PropTypes.bool,
+  className: PropTypes.string
 }
 
 Bubble.defaultProps = {

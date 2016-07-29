@@ -1,14 +1,21 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
-import { alignments, sizes, sizesRegex, behaviorRegex } from '../constants'
+import { alignments, sizes, behaviors } from '../constants'
 
-const Grid = ({ wrap, align, size, behavior, noGutter, children, ...rest }) => {
-  const className = classnames(
-    'o-grid', {
+const Grid = ({ wrap, align, responsiveness, noGutter, className, children, ...rest }) => {
+  const responsive = responsiveness
+    ? responsiveness.map((item) => {
+        return `o-grid--${item.size}-${item.behavior}`
+      })
+    : []
+  
+  className = classnames(
+    className,
+    'o-grid',
+    responsive, {
       ['o-grid--wrap']: wrap,
       [`o-grid--${align}`]: align,
-      [`o-grid--${size}-${behavior}`]: size && behavior,
       ['o-grid--no-gutter']: noGutter
     }
   )
@@ -23,31 +30,14 @@ const Grid = ({ wrap, align, size, behavior, noGutter, children, ...rest }) => {
 Grid.propTypes = {
   wrap: PropTypes.bool,
   align: PropTypes.oneOf(alignments),
-  size: (props, propName, componentName) => {
-    if (!sizesRegex.test(props[propName])) {
-      return new Error(
-        'Invalid prop `' + propName + '` supplied to `' + componentName + '`. Validation failed. Allowed values: ' +
-        '`small`, `medium`, `large`.'
-      )
-    } else if (!props.behavior) {
-      return new Error(
-        'Missing prop `behavior` on `' + componentName + '` in addition to prop `' + propName + '`. Validation failed.'
-      )
-    }
-  },
-  behavior: (props, propName, componentName) => {
-    if (!behaviorRegex.test(props[propName])) {
-      return new Error(
-        'Invalid prop `' + propName + '` supplied to `' + componentName + '`. Validation failed. Allowed values: ' +
-        '`fit`, `full`.'
-      )
-    } else if (!props.size) {
-      return new Error(
-        'Missing prop `extendedSizes` on `' + componentName + '` in addition to prop `' + propName + '`. Validation failed.'
-      )
-    }
-  },
-  noGutter: PropTypes.bool
+  responsiveness: PropTypes.arrayOf(
+    PropTypes.shape({
+      size: PropTypes.oneOf(sizes).required,
+      behavior: PropTypes.oneOf(behaviors).required
+    })
+  ),
+  noGutter: PropTypes.bool,
+  className: PropTypes.string
 }
 
 Grid.defaultProps = {
@@ -55,8 +45,9 @@ Grid.defaultProps = {
   noGutter: false
 }
 
-const Cell = ({ width, align, offset, responsive, noGutter, fixed, hidden, visible, children, ...rest }) => {
-  const className = classnames(
+const Cell = ({ width, align, offset, responsive, noGutter, fixed, hidden, visible, className, children, ...rest }) => {
+  className = classnames(
+    className,
     'o-grid__cell', {
       [`o-grid__cell--width-${width}${responsive ? `@${responsive}` : ''}`]: width && width % 5 === 0 &&
         width > 0 && width <= 100 && responsive ? responsive : true,
@@ -106,7 +97,8 @@ Cell.propTypes = {
         'Validation failed.'
       )
     }
-  }
+  },
+  className: PropTypes.string
 }
 
 Cell.defaultProps = {
