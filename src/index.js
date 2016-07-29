@@ -11,6 +11,7 @@ import Badge from './components/Badge'
 import Bubble from './components/Bubble'
 import { ButtonGroup, Button } from './components/Button'
 import { Card, CardContent, CardHeading, CardItem, CardDivider } from './components/Card'
+import Heading from './components/Heading'
 
 // Utilities
 import Align from './utilities/Align'
@@ -34,5 +35,6 @@ export {
   CardHeading,
   CardItem,
   CardDivider,
+  Heading,
   Align
 }
