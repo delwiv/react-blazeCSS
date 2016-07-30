@@ -12,9 +12,9 @@ const Heading = ({ size, className, children, ...rest }) => {
   )
 
   return (
-    <span className={className} {...rest}>
+    <div className={className} {...rest}>
       {children}
-    </span>
+    </div>
   )
 }
 
