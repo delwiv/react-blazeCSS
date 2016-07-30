@@ -14,6 +14,7 @@ import { Card, CardContent, CardHeading, CardItem, CardDivider } from './compone
 import Heading from './components/Heading'
 import { Input, InputGroup, FieldGroup, Select, Checkbox, Radio, FieldSet } from './components/Input'
 import { List, ListItem } from './components/List'
+import { Menu, MenuItem } from './components/Menu'
 
 // Utilities
 import Align from './utilities/Align'
@@ -47,5 +48,7 @@ export {
   FieldSet,
   List,
   ListItem,
+  Menu,
+  MenuItem,
   Align
 }
