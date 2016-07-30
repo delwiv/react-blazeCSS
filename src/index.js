@@ -15,6 +15,7 @@ import Heading from './components/Heading'
 import { Input, InputGroup, FieldGroup, Select, Checkbox, Radio, FieldSet } from './components/Input'
 import { List, ListItem } from './components/List'
 import { Menu, MenuItem } from './components/Menu'
+import { Nav, NavItem } from './components/Nav'
 
 // Utilities
 import Align from './utilities/Align'
@@ -50,5 +51,7 @@ export {
   ListItem,
   Menu,
   MenuItem,
+  Nav,
+  NavItem,
   Align
 }
