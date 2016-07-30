@@ -106,7 +106,7 @@ FieldGroup.propTypes = {
   className: PropTypes.string
 }
 
-const Select = ({ state, size, options, disabled, className, ...rest }) => {
+const Select = ({ state, size, disabled, className, ...rest }) => {
   className = classnames(
     className,
     'c-choice', {
@@ -119,7 +119,7 @@ const Select = ({ state, size, options, disabled, className, ...rest }) => {
 
   return (
     <select className={className} {...disabled} {...rest}>
-      {options.map((option) => <option>{option}</option>)}
+      {children}
     </select>
   )
 }
@@ -127,9 +127,6 @@ const Select = ({ state, size, options, disabled, className, ...rest }) => {
 Select.propTypes = {
   state: PropTypes.oneOf(states),
   size: PropTypes.oneOf(extendedSizes),
-  options: PropTypes.arrayOf(
-    PropTypes.string
-  ).required,
   disabled: PropTypes.bool
 }
 
