@@ -43,6 +43,12 @@ const states = [
   'error'
 ]
 
+const shadows = [
+  'high',
+  'higher',
+  'highest'
+]
+
 const defaults = {
   extendedSizes: 'medium'
 }
@@ -55,5 +61,6 @@ export {
   positions,
   speeds,
   states,
+  shadows,
   defaults
 }

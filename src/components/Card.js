@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 
+import { shadows } from '../constants'
+
 const Card = ({ shadow, group, className, children, ...rest }) => {
   className = classnames(
     className,
     'c-card', {
-      ['c-card--high']: shadow === 'high',
-      ['c-card--higher']: shadow === 'higher',
-      ['c-card--highest']: shadow === 'highest',
+      [`c-card--${shadow}`]: shadow,
       ['c-card--grouped']: group
     }
   )
@@ -21,11 +21,7 @@ const Card = ({ shadow, group, className, children, ...rest }) => {
 
 Card.propTypes = {
   heading: PropTypes.string,
-  shadow: PropTypes.oneOf([
-    'high',
-    'higher',
-    'highest'
-  ]),
+  shadow: PropTypes.oneOf(shadows),
   group: PropTypes.bool,
   className: PropTypes.string
 }
