@@ -130,7 +130,7 @@ Select.propTypes = {
   disabled: PropTypes.bool
 }
 
-const Checkbox = ({ checked, state, size, className, children, ...rest }) => {
+const Checkbox = ({ checked, state, size, disabled, className, children, ...rest }) => {
   className = classnames(
     className,
     'c-choice', {
@@ -138,10 +138,12 @@ const Checkbox = ({ checked, state, size, className, children, ...rest }) => {
       [`c-choice--${size}`]: size
     }
   )
+  
+  disabled = disabled ? { disabled: 'disabled' } : {}
 
   return (
     <label className={className} {...rest}>
-      <input type='checkbox' defaultChecked={checked} /> {children}
+      <input type='checkbox' defaultChecked={checked} {...disabled} /> {children}
     </label>
   )
 }
@@ -153,7 +155,7 @@ Checkbox.propType = {
   className: PropTypes.string
 }
 
-const Radio = ({ checked, name, value, state, size, className, children, ...rest }) => {
+const Radio = ({ checked, name, value, state, size, disabled, className, children, ...rest }) => {
   className = classnames(
     className,
     'c-choice', {
@@ -162,9 +164,11 @@ const Radio = ({ checked, name, value, state, size, className, children, ...rest
     }
   )
 
+  disabled = disabled ? { disabled: 'disabled' } : {}
+
   return (
     <label className={className} {...rest}>
-      <input type='radio' name={name} value={value} defaultChecked={checked} /> {children}
+      <input type='radio' name={name} value={value} defaultChecked={checked} {...disabled} /> {children}
     </label>
   )
 }
