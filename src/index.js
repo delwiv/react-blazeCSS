@@ -20,6 +20,7 @@ import Overlay from './components/Overlay'
 import Range from './components/Range'
 import { Table, TableHead, TableBody, TableRow, TableCell } from './components/Table'
 import { TabContainer, TabHeading, Tab, TabContent } from './components/Tab'
+import { Paragraph, Link, Highlight, Loud, Quiet, Abbr, Mono, Kbd, Code, Blockquote } from './components/Typography'
 
 // Utilities
 import Align from './utilities/Align'
@@ -68,5 +69,15 @@ export {
   TabHeading,
   Tab,
   TabContent,
+  Paragraph,
+  Link,
+  Highlight,
+  Loud,
+  Quiet,
+  Abbr,
+  Mono,
+  Kbd,
+  Code,
+  Blockquote
   Align
 }
