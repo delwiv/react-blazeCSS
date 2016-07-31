@@ -78,6 +78,6 @@ export {
   Mono,
   Kbd,
   Code,
-  Blockquote
+  Blockquote,
   Align
 }
