@@ -32,8 +32,8 @@ Grid.propTypes = {
   align: PropTypes.oneOf(alignments),
   responsiveness: PropTypes.arrayOf(
     PropTypes.shape({
-      size: PropTypes.oneOf(sizes).required,
-      behavior: PropTypes.oneOf(behaviors).required
+      size: PropTypes.oneOf(sizes).isRequired,
+      behavior: PropTypes.oneOf(behaviors).isRequired
     })
   ),
   noGutter: PropTypes.bool,

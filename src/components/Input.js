@@ -175,7 +175,7 @@ const Radio = ({ checked, name, value, state, size, disabled, className, childre
 
 Radio.propType = {
   checked: PropTypes.bool,
-  name: PropTypes.string.required,
+  name: PropTypes.string.isRequired,
   value: PropTypes.string,
   state: PropTypes.oneOf(states),
   size: PropTypes.oneOf(extendedSizes),
