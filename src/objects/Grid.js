@@ -40,12 +40,19 @@ Grid.propTypes = {
   className: PropTypes.string
 }
 
-const Cell = ({ width, align, offset, responsive, noGutter, fixed, hidden, visible, className, children, ...rest }) => {
+const Cell = ({ width, size, align, offset, responsiveness, noGutter, fixed, hidden, visible, className, children, ...rest }) => {
+  const responsive = responsiveness
+    ? responsiveness.map((item) => {
+      return `o-grid__cell--width-${item.width}@${item.size}`
+    })
+    : []
+  
   className = classnames(
     className,
-    'o-grid__cell', {
-      [`o-grid__cell--width-${width}${responsive ? `@${responsive}` : ''}`]: width && width % 5 === 0 &&
-        width > 0 && width <= 100 && responsive ? responsive : true,
+    'o-grid__cell',
+    responsive, {
+      [`o-grid__cell--width-${width}${size ? `@${size}` : ''}`]: width && width % 5 === 0 &&
+        width > 0 && width <= 100 && (size ? size : true),
       [`o-grid__cell--offset-${offset}`]: offset && offset % 5 === 0 && offset > 0 && offset <= 100,
       [`o-grid__cell--${align}`]: align,
       ['o-grid__cell--no-gutter']: noGutter,
@@ -64,9 +71,15 @@ const Cell = ({ width, align, offset, responsive, noGutter, fixed, hidden, visib
 
 Cell.propTypes = {
   width: PropTypes.number,
+  size: PropTypes.oneOf(sizes),
   align: PropTypes.oneOf(alignments),
   offset: PropTypes.number,
-  responsive: PropTypes.oneOf(sizes),
+  responsiveness: PropTypes.arrayOf(
+    PropTypes.shape({
+      size: PropTypes.oneOf(sizes).isRequired,
+      width: PropTypes.number.isRequired
+    })
+  ),
   noGutter: PropTypes.bool,
   fixed: PropTypes.bool,
   hidden: (props, propName, componentName) => {
