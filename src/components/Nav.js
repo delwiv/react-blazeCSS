@@ -35,7 +35,7 @@ Nav.propTypes = {
   className: PropTypes.string
 }
 
-const NavItem = ({ state, active, right, className, children, ...rest }) => {
+const NavItem = ({ href, state, active, right, className, children, ...rest }) => {
   className = classnames(
     className,
     'c-nav__item', {
@@ -44,6 +44,14 @@ const NavItem = ({ state, active, right, className, children, ...rest }) => {
       [`c-nav__item--${state}`]: state
     }
   )
+  
+  if (href) {
+    return (
+      <a href={href} className={className} {...rest}>
+        {children}
+      </a>
+    )
+  }
 
   return (
     <li className={className} {...rest}>
