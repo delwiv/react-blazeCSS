@@ -18,6 +18,7 @@ import { Menu, MenuItem } from './components/Menu'
 import { Nav, NavItem } from './components/Nav'
 import Overlay from './components/Overlay'
 import Range from './components/Range'
+import { Table, TableHead, TableBody, TableRow, TableCell } from './components/Table'
 
 // Utilities
 import Align from './utilities/Align'
@@ -57,5 +58,10 @@ export {
   NavItem,
   Overlay,
   Range,
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
   Align
 }
