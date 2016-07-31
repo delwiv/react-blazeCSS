@@ -25,8 +25,4 @@ Badge.propTypes = {
   className: PropTypes.string
 }
 
-Badge.defaultProps = {
-  round: false
-}
-
 export default Badge

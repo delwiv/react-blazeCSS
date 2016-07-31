@@ -40,11 +40,6 @@ Grid.propTypes = {
   className: PropTypes.string
 }
 
-Grid.defaultProps = {
-  wrap: false,
-  noGutter: false
-}
-
 const Cell = ({ width, align, offset, responsive, noGutter, fixed, hidden, visible, className, children, ...rest }) => {
   className = classnames(
     className,
@@ -102,8 +97,6 @@ Cell.propTypes = {
 }
 
 Cell.defaultProps = {
-  noGutter: false,
-  fixed: false,
   hidden: false,
   visible: false
 }

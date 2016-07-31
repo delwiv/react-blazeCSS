@@ -29,10 +29,6 @@ AlertContainer.propTypes = {
   className: PropTypes.string
 }
 
-AlertContainer.defaultProps = {
-  trigger: false
-}
-
 const Alert = ({ state, animate, from, speed, trigger, closable, className, children, ...rest }) => {
   className = classnames(
     className,
@@ -64,8 +60,6 @@ Alert.propTypes = {
 }
 
 Alert.defaultProps = {
-  animate: false,
-  trigger: false,
   closable: true
 }
 

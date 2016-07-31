@@ -29,8 +29,4 @@ Bubble.propTypes = {
   className: PropTypes.string
 }
 
-Bubble.defaultProps = {
-  trigger: false
-}
-
 export default Bubble

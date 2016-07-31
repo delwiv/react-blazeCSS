@@ -55,10 +55,4 @@ Align.propTypes = {
   className: PropTypes.string
 }
 
-Align.defaultProps = {
-  vertical: false,
-  horizontal: false,
-  absolute: false
-}
-
 export default Align

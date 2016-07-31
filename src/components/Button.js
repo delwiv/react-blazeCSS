@@ -22,11 +22,6 @@ ButtonGroup.propTypes = {
   round: PropTypes.bool,
   className: PropTypes.string
 }
-
-ButtonGroup.defaultProps = {
-  round: false
-}
-
 const Button = ({ type, state, size, block, ghost, round, close, className, children, ...rest }) => {
   className = classnames(
     className,
@@ -82,11 +77,7 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-  type: 'button',
-  block: false,
-  ghost: false,
-  round: false,
-  close: false
+  type: 'button'
 }
 
 export {

@@ -20,8 +20,4 @@ Address.propTypes = {
   className: PropTypes.string
 }
 
-Address.defaultProps = {
-  heading: false
-}
-
 export default Address
